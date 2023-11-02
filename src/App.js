@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import  Button  from '@carbon/react/lib/components/Button';
 import  { Accordion, AccordionItem }  from '@carbon/react';
 
 class App extends Component {
@@ -40,7 +39,6 @@ class App extends Component {
         </p>
       </AccordionItem>
     </Accordion>
-      <Button>Button</Button>
       </>
     );
   }
