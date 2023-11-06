@@ -1,46 +1,36 @@
+
+@use '@carbon/styles/scss/config' with
+  (
+    $prefix: 'bx',
+    $css--default-type: true,
+    $css--reset: true
+  );
+
 @use '@carbon/layout/scss/generated/spacing' with (
   $spacing-05: 10px
 );
-@use '@carbon/react/scss/themes' as *;
 
-//overriding theme tokens and adding a custom token
-@use '@carbon/react/scss/theme' with (
-  $theme: (
-    // add a completely new token
-    custom-token: #bada44,
-    // redefine existing tokens to new values
-    text-error: rebeccapurple,
-    focus: pink,
-    spacing-08: 10px,
-    spacing05: 10px
-  )
-);
-
-// override a component token
-@use '@carbon/react/scss/components/button/tokens' as button-tokens with (
-  $button-primary: #3f51b5
-);
+// // override a component token
+// @use '@carbon/react/scss/components/button/tokens' as button-tokens with (
+//   $button-primary: #3f51b5
+// );
 
 
+// // Override a token from the theme
+@use '@carbon/styles/scss/themes';
+@use '@carbon/styles/scss/theme' with
+  (
+    $theme: (
+      background: #e2e2e2,
+      text-primary: red,
+    )
+  );
+
+@use '@carbon/styles';
 @use '@carbon/react/scss/components/accordion';
-@use '@carbon/react/scss/components/date-picker';
+
 
 :root {
   @include theme.theme();
-}
-
-.color {
-  margin: 1rem;
-  height: 3rem;
-  width: 20rem;
-}
-
-.background {
-  background: theme.$background;
-  border: 2px solid rgba(theme.get('custom-token'), 0.95);
-}
-
-body {
-    padding: theme.get('spacing-08')
 }
 
