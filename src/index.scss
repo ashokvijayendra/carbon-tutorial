@@ -1,7 +1,7 @@
 
 @use '@carbon/styles/scss/config' with
   (
-    $prefix: 'bx',
+    $prefix: 'wag',
     $css--default-type: true,
     $css--reset: true
   );
@@ -21,7 +21,6 @@
 @use '@carbon/styles/scss/theme' with
   (
     $theme: (
-      background: #e2e2e2,
       text-primary: red,
     )
   );
@@ -29,8 +28,10 @@
 @use '@carbon/styles';
 @use '@carbon/react/scss/components/accordion';
 
-
 :root {
   @include theme.theme();
 }
 
+.my-dark-theme {
+  @include theme.theme(themes.$g100);
+}
